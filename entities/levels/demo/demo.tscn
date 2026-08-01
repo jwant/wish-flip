@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bggw8w6f2usnr"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_htwls"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0o5it"]
+
+[node name="Demo" type="Node3D" unique_id=326457125]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=849628440]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1655518359]
+shape = SubResource("WorldBoundaryShape3D_htwls")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=843087753]
+mesh = SubResource("PlaneMesh_0o5it")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1454678321]
+transform = Transform3D(0.6428121, 0.22026141, -0.733674, 3.750293e-09, 0.957769, 0.2875386, 0.7660239, -0.18483326, 0.61566556, -1.6420923, 0.28997302, 0.8483919)

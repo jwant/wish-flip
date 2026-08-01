@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cnc8fomemrrmc"]
+
+[ext_resource type="PackedScene" uid="uid://bggw8w6f2usnr" path="res://entities/levels/demo/demo.tscn" id="1_0o5it"]
+
+[node name="WishFlip" type="Node3D" unique_id=816989620]
+
+[node name="Demo" parent="." unique_id=326457125 instance=ExtResource("1_0o5it")]
