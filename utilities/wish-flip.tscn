@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cnc8fomemrrmc"]
 
 [ext_resource type="PackedScene" uid="uid://bggw8w6f2usnr" path="res://entities/levels/demo/demo.tscn" id="1_0o5it"]
+[ext_resource type="PackedScene" uid="uid://c2l0u0sr3hytn" path="res://utilities/game_manager/game_manager.tscn" id="2_g8rvj"]
 
 [node name="WishFlip" type="Node3D" unique_id=816989620]
 
 [node name="Demo" parent="." unique_id=326457125 instance=ExtResource("1_0o5it")]
+
+[node name="GameManager" parent="." unique_id=815132588 instance=ExtResource("2_g8rvj")]

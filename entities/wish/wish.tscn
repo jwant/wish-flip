@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cfm7ec3004pub"]
+
+[ext_resource type="Script" uid="uid://7hreli7iy6fp" path="res://entities/wish/wish.gd" id="1_rdm07"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yrnjn"]
+friction = 0.5
+bounce = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbjtq"]
+albedo_color = Color(1, 0.3764706, 1, 0.039215688)
+
+[sub_resource type="SphereMesh" id="SphereMesh_htwls"]
+material = SubResource("StandardMaterial3D_rbjtq")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_htwls"]
+
+[node name="Wish" type="Node3D" unique_id=1518894807]
+script = ExtResource("1_rdm07")
+
+[node name="Ball" type="RigidBody3D" parent="." unique_id=2044764545]
+unique_name_in_owner = true
+physics_material_override = SubResource("PhysicsMaterial_yrnjn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball" unique_id=222270194]
+mesh = SubResource("SphereMesh_htwls")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball" unique_id=290599663]
+shape = SubResource("SphereShape3D_htwls")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1300181488]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 2, 2)
+
+[node name="CameraPivot" type="Node3D" parent="CameraRig" unique_id=1498296739]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/CameraPivot" unique_id=929827433]
+current = true
