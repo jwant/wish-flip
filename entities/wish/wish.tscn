@@ -19,6 +19,8 @@ script = ExtResource("1_rdm07")
 
 [node name="Ball" type="RigidBody3D" parent="." unique_id=2044764545]
 unique_name_in_owner = true
+collision_layer = 17
+collision_mask = 17
 physics_material_override = SubResource("PhysicsMaterial_yrnjn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ball" unique_id=222270194]
@@ -34,5 +36,9 @@ transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81
 [node name="CameraPivot" type="Node3D" parent="CameraRig" unique_id=1498296739]
 unique_name_in_owner = true
 
-[node name="Camera3D" type="Camera3D" parent="CameraRig/CameraPivot" unique_id=929827433]
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig/CameraPivot" unique_id=1487131752]
+collision_mask = 16
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/CameraPivot/SpringArm3D" unique_id=929827433]
 current = true
