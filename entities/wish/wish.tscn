@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cfm7ec3004pub"]
 
 [ext_resource type="Script" uid="uid://7hreli7iy6fp" path="res://entities/wish/wish.gd" id="1_rdm07"]
+[ext_resource type="Script" uid="uid://cnehhfxjibk8u" path="res://utilities/state_machine/state_machine.gd" id="2_bjr0n"]
+[ext_resource type="Script" uid="uid://db6b78kl1t1li" path="res://entities/wish/states/rolling.gd" id="3_ri2in"]
+[ext_resource type="Script" uid="uid://dsukrs2q3v0yd" path="res://entities/wish/states/activating.gd" id="4_ri2in"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yrnjn"]
 friction = 0.5
@@ -42,3 +45,18 @@ spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig/CameraPivot/SpringArm3D" unique_id=929827433]
 current = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=459585994 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("2_bjr0n")
+initial_state = NodePath("RollingState")
+
+[node name="RollingState" type="Node" parent="StateMachine" unique_id=1246663972]
+unique_name_in_owner = true
+script = ExtResource("3_ri2in")
+metadata/_custom_type_script = "uid://duecduaxch4eb"
+
+[node name="ActivatingState" type="Node" parent="StateMachine" unique_id=1967538608]
+unique_name_in_owner = true
+script = ExtResource("4_ri2in")
+metadata/_custom_type_script = "uid://duecduaxch4eb"
